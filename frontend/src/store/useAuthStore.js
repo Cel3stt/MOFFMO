@@ -50,7 +50,7 @@ export const useAuthStore = create((set) => ({
             toast.success("Logged in successfully")
             
         } catch (error) {
-            toast.error("Email and Password is required")
+            toast.error(error.response.data.message)
         } finally{
             set({isLoggedIn:false})
         }
