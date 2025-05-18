@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
 @import "tailwindcss";
 @plugin "daisyui";
 
 
+
+
+.logo {
+  font-family: 'Gamja Flower', cursive;
+  color: #fc87d7;
+  
+  
+}
