@@ -4,6 +4,7 @@ import SidebarSkeleton from './skeletons/SidebarSkeleton'
 import { Users } from 'lucide-react'
 import avatar from '../assets/avatar.jpg'
 import { useAuthStore } from '../store/useAuthStore'
+import contactBtn from '../assets/contactBtn.png'
 const Sidebar = () => {
 
   const {getUsers, users, selectedUser,setSelectedUser, isUsersLoading} = useChatStore()
@@ -21,11 +22,12 @@ const Sidebar = () => {
   if(isUsersLoading) return <SidebarSkeleton/>
 
   return (
-    <aside className='h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200'>
-      <div className="border-b border-base-300 w-full p-5">
+    <aside className='h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200 bg-secondary/10'>
+      <div className="border-b border-base-300 w-full p-5 ">
         <div className="flex items-center gap-2">
-          <Users className='size-6'/>
-          <span className='font-medium hidden lg:block'>Contacts</span>
+          <img src={contactBtn} alt="contacts" className='size-8'/>
+          {/* <Users className='size-6'/> */}
+          <span className='font-medium hidden lg:block text-xl'>Inbox</span>
         </div>
 
         {/*=====Online filter toggle======*/}
