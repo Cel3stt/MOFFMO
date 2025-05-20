@@ -1,5 +1,7 @@
 import Message from "../model/message.model.js";
 import User from "../model/user.model.js";
+import cloudinary from "../lib/cloudinary.js";
+import { getReceiverSocketId, io } from "../lib/socket.js";
 
 export const getUsersForSidebar = async (req,res) => {
     try {
@@ -15,12 +17,12 @@ export const getUsersForSidebar = async (req,res) => {
 
 export const getMessages = async (req,res) => {
     try {
-        const {id:userToChatId} = req.params
+        const {id: userToChatId} = req.params
         const myId = req.user._id
 
-        const message = await Message.find({
+        const messages = await Message.find({
             $or: [
-                {senderid:myId, receiverId:userToChatId},
+                {senderId:myId, receiverId:userToChatId},
                 {senderId:userToChatId, receiverId:myId}
             ]
         })
@@ -49,7 +51,7 @@ export const sendMessage = async (req,res) => {
             imageUrl = uploadResponse.secure_url
         }
 
-        const newMessage = await Message({
+        const newMessage = new Message({
             senderId,
             receiverId,
             text,
@@ -59,7 +61,12 @@ export const sendMessage = async (req,res) => {
         await newMessage.save()
 
 
-        //todo: realtime functrionality
+
+        const receiverSocketId = getReceiverSocketId(receiverId)
+
+        if(receiverSocketId){
+            io.to(receiverSocketId).emit('newMessage', newMessage)
+        }
 
         res.status(201).json(newMessage)
     } catch (error) {

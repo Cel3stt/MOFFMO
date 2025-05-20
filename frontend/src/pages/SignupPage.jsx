@@ -4,6 +4,8 @@ import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User2Icon,} from 'luci
 import { Link } from 'react-router-dom'
 import AuthImagePattern from '../components/AuthImagePattern'
 import toast from 'react-hot-toast'
+
+
 const SignupPage = () => {
 
   const [showPassword, setShowPassword] = useState(false)
