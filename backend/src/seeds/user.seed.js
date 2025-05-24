@@ -28,7 +28,7 @@ const seedUsers = [
   },
   {
     email: "jin@gmail.com",
-    fullname: "Jin Failana",
+    fullname: "Jin love lei",
     password: "123456",
     profilePic: "https://i.pinimg.com/736x/96/98/f6/9698f63016f7fb05029de0205e48a3e8.jpg",
   },

@@ -89,7 +89,7 @@ export const useAuthStore = create((set,get) => ({
             
         } catch (error) {
             console.log("Error in Update Profile:", error)
-            toast.error(error.response.data.message)
+            toast.error("Image size too large")
         } finally{
             set({isUpdatingProfile:false})
         }

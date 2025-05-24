@@ -23,7 +23,7 @@ const LoginPage = () => {
 
 
   return (
-    <div className='min-h-screen grid lg:grid-cols-2'>
+    <div className='min-h-screen grid lg:grid-cols-2 overflow-hidden'>
 
      {/* ======================= LEFT SIDE======================= */}
      <div className='flex flex-col justify-center items-center p-6 sm:p-12'>
@@ -131,10 +131,9 @@ const LoginPage = () => {
 
       {/* ======================= RIGHT SIDE======================= */}
 
-      <AuthImagePattern
-      title ='Welcome Back!'
-      subTitle="Sign in to your account and continue your journey with us."
-      />
+   <div className='bg-base-200/40 hidden lg:flex justify-center items-center relative'>
+       <AuthImagePattern   />
+   </div>
 
     </div>
   )
