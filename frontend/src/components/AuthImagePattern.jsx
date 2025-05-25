@@ -1,11 +1,11 @@
 import { Boxes } from 'lucide-react'
 import React from 'react'
-import cinnamorol from '../assets/cinnamorol.png'
+import bglight from '../assets/bglight.png'
 const AuthImagePattern = () => {
   return (
-        <div className='' >
+        <div className='w-full' >
        
-              <img src={cinnamorol} alt="Login " className='size-170 ' />
+              <img src={bglight} alt="Login " className='object-cover' />
          
         </div>
 

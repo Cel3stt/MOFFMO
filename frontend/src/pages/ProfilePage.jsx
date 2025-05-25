@@ -62,7 +62,7 @@ const ProfilePage = () => {
                   <label
                     htmlFor="avatar-upload"
                     className={`absolute -bottom-2 -right-2 bg-primary hover:bg-primary/40 hover:scale-105 p-2 rounded-full
-                      cursor-pointer transition-all duration-200 shadow-lg border-2 border-white
+                      cursor-pointer transition-all duration-200  border-2 border-white
                       ${isUpdatingProfile ? "animate-pulse pointer-events-none" : ""}
                     `}
                   >
