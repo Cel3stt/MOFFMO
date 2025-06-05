@@ -13,7 +13,7 @@ const SettingsPage = () => {
 
   const {theme, setTheme} = useThemeStore()
   return (
-    <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">
+    <div className="h-screen container mx-auto px-4 pt-23 max-w-6xl">
       <div className="space-y-6">
         <div className="flex flex-col gap-1">
           <h2 className="text-lg font-semibold">Theme</h2>
@@ -52,13 +52,13 @@ const SettingsPage = () => {
 
         <h3 className="text-lg font-semibold mb-3">Preview</h3>
         <div className="rounded-xl border border-base-300 overflow-hidden bg-base-100 shadow-lg">
-          <div className="p-4 bg-base-200">
+          <div className="p-4 bg-secondary">
             <div className="max-w-lg mx-auto">
 
               <div className="bg-base-100 rounded-xl shadow-sm overflow-hidden">
                 <div className="px-4 py-3 border-b border-base-300 bg-base-100">
                   <div className="flex items-center gap-3">
-                    <div className="size-8 rounded-full bg-primary flex items-center justify-center text-primary-content font-medium">
+                    <div className="size-8 rounded-full bg-primary flex items-center justify-center text-whiteText font-medium">
                       R
                     </div>
 
@@ -79,13 +79,13 @@ const SettingsPage = () => {
                   >
 
                     <div
-                    className={`max-w-[80%] rounded-xl p-3 shadow-sm ${message.isSent ? "bg-primary text-primary-content" : "bg-base-200 "}`}
+                    className={`max-w-[80%] rounded-xl p-3 shadow-sm ${message.isSent ? "bg-primary text-primary-content " : "bg-base-200 "}`}
                     >
                       <p className="text-sm">
                         {message.text}
                       </p>
 
-                      <p className={`text-[11px] mt-2 ${message.isSent ? 'text-primary-content/70' : 'text-base-content/70'}`}>
+                      <p className={`text-[11px] mt-2 ${message.isSent ? 'text-whiteText/90' : 'text-base-content/70'}`}>
                       2:16 PM
                       </p>
 
@@ -109,7 +109,7 @@ const SettingsPage = () => {
                   />
 
                   <button className='btn btn-primary h-10 min-h-0 '>
-                    <Send size={16}/>
+                    <Send size={16} className='text-whiteText'/>
                   </button>
                 </div>
               </div>
