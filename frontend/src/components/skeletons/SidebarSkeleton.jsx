@@ -29,7 +29,7 @@ const SidebarSkeleton = () => {
             {/* User info skeleton - only visible on larger screens */}
             <div className="hidden lg:block text-left min-w-0 flex-1">
               <div className="skeleton h-4 w-32 mb-2" />
-              <div className="skeleton h-3 w-16" />
+              <div className="skeleton h-3 w-18" />
             </div>
           </div>
         ))}
